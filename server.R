@@ -14,7 +14,6 @@ library(tidyr)
 library(dplyr)
 library(readr)
 
-
 respostas_brutas <- read_excel("./tabela_respostas_brutas.xlsx")
 #View(respostas_brutas)
 
@@ -105,12 +104,13 @@ shinyServer(function(input, output) {
     req(input$num_questao)
     
     dados %>% filter(resp_sigla %in% c(input$orgao1, input$orgao2)) %>% 
-      dplyr::select(resp_nome, starts_with(input$num_questao) & !ends_with("X") & !ends_with("Z")) ->
+      dplyr::select(resp_sigla, resp_nome, 
+                    starts_with(input$num_questao) & !ends_with("X") & !ends_with("Z")) ->
       resposta_marcacoes
     
     knitr::kable(resposta_marcacoes, caption="Notas no item") %>% 
       kable_styling()  
-    
+      
   }
   
   

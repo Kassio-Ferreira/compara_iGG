@@ -15,7 +15,7 @@ shinyUI(
   fluidPage(
     
     # Application title
-    titlePanel("Selecione o item e os órgãos:"),
+    titlePanel("iGG TCU 2021"),
     
     sidebarLayout(
       sidebarPanel(width=2,
