@@ -7,7 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 
-library(shiny)
 library(readxl)
 library(kableExtra)
 library(tidyverse)
